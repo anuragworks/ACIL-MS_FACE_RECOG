@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="Attandence.Views.RegisterUser">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Padding="0">
+                <xct:CameraView x:Name="XctCam" CaptureMode="Photo" MediaCaptured="XctCam_MediaCaptured" CameraOptions="Front" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <Entry x:Name="txtName" Placeholder="Enter Name" MaxLength="20"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="img" Source="AddConsumers.png" Grid.Row="0" Grid.Column="0"/>
+                    <Button Grid.Row="0" Grid.Column="1" Text="Register" Clicked="Button_Clicked" Padding="50" Margin="0,0,0,0" />
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

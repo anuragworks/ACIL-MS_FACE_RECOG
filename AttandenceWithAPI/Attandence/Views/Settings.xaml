@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Attandence.ViewModels"
+             x:Class="Attandence.Views.Settings">
+    <ContentPage.BindingContext>
+        <local:SettingsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Margin="0" Padding="0" VerticalOptions="StartAndExpand"  HorizontalOptions="Center">
+                <Frame BackgroundColor="Black" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HasShadow="True" Opacity=".8" CornerRadius="0" Padding="0">
+                    <StackLayout>
+                        <Label IsVisible="{Binding IsEmpty}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Italic" Text="No Items" Margin="0,50,0,0"/>
+                        <ListView ItemsSource="{Binding Lst}" SelectedItem="{Binding SelectedListItem, Mode=TwoWay}" IsEnabled="{Binding isListViewEnable, Mode=TwoWay}" x:Name="listView">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.View>
+                                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="0" Spacing="0">
+                                                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="10,12,10,12">
+                                                    <Label TextColor="White" Text="{Binding Text}" VerticalOptions="Center"/>
+                                                </StackLayout>
+                                                <BoxView VerticalOptions="End" BackgroundColor="DarkGray" HeightRequest="1"/>
+                                            </StackLayout>
+                                        </ViewCell.View>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

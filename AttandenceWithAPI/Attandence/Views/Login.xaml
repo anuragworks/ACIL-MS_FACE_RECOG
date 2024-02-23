@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Attandence.Views.Login"
+             Shell.NavBarIsVisible="False"
+             Title="Login">
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView>
+                <StackLayout Spacing="0">
+                    <StackLayout Orientation="Vertical" Padding="0" Margin="0,5,0,10" VerticalOptions="Center">
+                        <Image Source="Alogo.png" Margin="0" WidthRequest="140" HeightRequest="140" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Padding="10,0,10,0" Margin="0" VerticalOptions="Start">
+                        <Frame BackgroundColor="White" HasShadow="True" Opacity=".8" CornerRadius="10" Padding="15" Margin="0">
+                            <StackLayout>
+                                <StackLayout Margin="0,0,0,10">
+                                    <Entry x:Name="txtUserName" Text="" Placeholder="User Name"  />
+                                </StackLayout>
+                                <StackLayout Margin="0,0,0,10">
+                                    <Entry x:Name="txtPassword" Placeholder="Password" />
+                                </StackLayout>
+                                <Button Text="Login" Clicked="Button_Clicked" Margin="0,0,0,0" />
+                                <Button Text="Forgot Password" BorderWidth="0" Margin="0,0,0,-20" Padding="0,-20,0,0" BackgroundColor="Transparent" TextColor="SkyBlue" HorizontalOptions="Start" />
+                                <Label Text="1.0.0" HorizontalTextAlignment="Center" Margin="0" Padding="0" FontSize="12" TextColor="White"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                    
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

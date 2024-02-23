@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+             x:Class="Attandence.Views.Loader.Loader"
+                 InputTransparent="False"
+                 HasSystemPadding="True"
+                 Title="LoaderPage"
+                 CloseWhenBackgroundIsClicked="False">
+    <ContentPage.Content>
+        <Frame x:Name="AdvanceLoader" Padding="5" BackgroundColor="Transparent" CornerRadius="5" HasShadow="True" HorizontalOptions="Center" VerticalOptions="Center" >
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <StackLayout Spacing="0">
+                    <ActivityIndicator IsRunning="True" Color="Red"></ActivityIndicator>
+                </StackLayout>
+                <Label Text="Please Wait.." TextColor="White" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</pages:PopupPage>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Attandence.Views.Dashboard">
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView>
+                <StackLayout Padding="0">
+                    <Frame BackgroundColor="Black" HasShadow="True" Opacity=".8" CornerRadius="0" Padding="0">
+                        <StackLayout>
+                            <StackLayout>
+                                <CollectionView
+                                    BackgroundColor="Transparent"
+                                    ItemsLayout="VerticalGrid, 2"
+                                    ItemsSource="{Binding ItemList}"
+                                    SelectionMode="Single"
+                                    SelectedItem="{Binding SelectedListItem, Mode=TwoWay}">
+                                    <CollectionView.EmptyView>
+                                        <StackLayout>
+                                            <Label HorizontalOptions="Center" Text="No Items"/>
+                                        </StackLayout>
+                                    </CollectionView.EmptyView>
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Frame Margin="5,3" Padding="0" HasShadow="False" CornerRadius="5" BackgroundColor="{Binding TabColor}">
+                                                    <StackLayout Padding="10" Orientation="Vertical" VerticalOptions="Center" >
+                                                        <StackLayout Margin="0,0,0,0">
+                                                            <Frame  CornerRadius="5" WidthRequest="60" HeightRequest="60" HorizontalOptions="Center" VerticalOptions="Center" Padding="5">
+                                                                <Image Source="{Binding Image}" WidthRequest="60" HeightRequest="60" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                                                            </Frame>
+                                                        </StackLayout>
+                                                        <Label Text="{Binding Title}" FontSize="18" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
+                                                    </StackLayout>
+                                                </Frame>
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup Name="CommonStates">
+                                                        <VisualState Name="Normal" />
+                                                        <VisualState Name="Selected">
+                                                            <VisualState.Setters>
+                                                                <Setter Property="BackgroundColor" Value="SkyBlue" />
+                                                            </VisualState.Setters>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
